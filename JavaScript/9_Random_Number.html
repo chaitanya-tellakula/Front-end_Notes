@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    body {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-align: center;
+    }
+
+    #mybut {
+      font-size: 3em;
+      padding: 5px 25px;
+      border-radius: 5px;
+    }
+
+    .labels {
+      font-size: 3em;
+    }
+    label {
+      margin-left: 20px;
+    }
+  </style>
+  <body>
+    <button id="mybut">Roll</button> <br /><br />
+    <label for="" id="mylabel1" class="labels"></label>
+    <label for="" id="mylabel2" class="labels"></label>
+    <label for="" id="mylabel3" class="labels"></label>
+
+    <script>
+      //Randon number Generator
+      //Math.random(); -> generate a number blw the 0<= num < 1  not one
+
+      let randomNum = Math.random();
+      console.log(randomNum);
+
+      let randomNum1 = Math.random() * 6; //This geenrate a random number btw  0 to 5.9999 But decimal values
+      console.log(randomNum1);
+
+      let randomNum2 = Math.floor(Math.random() * 6) + 1; //This geenrate a random number btw  1 to 6
+      console.log(randomNum2);
+
+      // Generate a number btw 1 to 100
+
+      let randomNum3 = Math.floor(Math.random() * 100) + 1; //This geenrate a random number btw  1 to 100
+      console.log(randomNum3);
+
+      //To Generate a number blw the range
+
+      const min = 50;
+      const max = 100;
+      let randomNum4 = Math.floor(Math.random() * (max - min)) + min; //This geenrate a random number btw  1 to 100
+      console.log(randomNum4);
+
+      const button = document.getElementById("mybut");
+      const label1 = document.getElementById("mylabel1");
+      const label2 = document.getElementById("mylabel2");
+      const label3 = document.getElementById("mylabel3");
+
+      let min1 = 1;
+      let max1 = 6;
+      let randomNum5;
+      let randomNum6;
+      let randomNum7;
+
+      button.onclick = function () {
+        randomNum5 = Math.floor(Math.random() * max1) + min1;
+        randomNum6 = Math.floor(Math.random() * max1) + min1;
+        randomNum7 = Math.floor(Math.random() * max1) + min1;
+        mylabel1.textContent = randomNum5;
+        mylabel2.textContent = randomNum6;
+        mylabel3.textContent = randomNum7;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <label for="name">Name : </label>
+    <input type="text" id="name" /><br />
+
+    <label for="Rollno">Rollno : </label>
+    <input type="text" id="Rollno" /><br />
+
+    <label for="UG">UG : </label>
+    <input type="number" id="UG" /><br /><br />
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <div></div>
+
+    <script>
+      let students = [];
+
+      const name = document.getElementById("name");
+      const Rollno = document.getElementById("Rollno");
+      const UG = document.getElementById("UG");
+
+      function addStudent() {
+        const s_name = name.value;
+        const s_roll = Rollno.value;
+        const s_UG = UG.value;
+
+        name.value = "";
+        Rollno.value = "";
+        UG.value = "";
+
+        const student = {
+          name: s_name,
+          Rollno: s_roll,
+          UG: s_UG,
+        };
+
+        students.push(student);
+
+        const a = document.createElement("div");
+        const n = document.createElement("h3");
+        const r = document.createElement("h3");
+        const u = document.createElement("h3");
+
+        n.textContent = "Name : " + s_name;
+        r.textContent = "Roll no : " + s_roll;
+        u.textContent = "UG : " + s_UG;
+
+        a.appendChild(n);
+        a.appendChild(r);
+        a.appendChild(u);
+
+        document.body.appendChild(a);
+      }
+    </script>
+  </body>
+</html>
+
+<!-- const result = document.getElementById("result");
+
+result.innerHTML += `
+    <h3>Name : ${s_name}</h3>
+    <h3>Roll No : ${s_roll}</h3>
+    <h3>UG : ${s_UG}</h3>
+`; -->

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      style="background-color: #90dead; font-size: larger; border-radius: 25px"
+    >
+      <a href="" style="text-decoration: none">Click me</a>
+    </button>
+
+    <button id="change" onclick="doSomeThing()">Change Text</button>
+    <p id="hi">hi</p>
+    <script>
+      function doSomeThing() {
+        document.getElementById("hi").innerHTML = "Welcome to google.com";
+      }
+    </script>
+  </body>
+</html>

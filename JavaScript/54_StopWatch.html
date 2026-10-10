@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #cbc9c9;
+      }
+
+      #myH1 {
+        font-size: 2.5em;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+
+      #container {
+        border: 5px solid;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 50px;
+      }
+
+      #display {
+        font-size: 5em;
+        font-family: monospace;
+        font-weight: bold;
+        text-shadow: 2px 2px 2px hsl(0, 5%, 4%);
+        margin-bottom: 10px;
+      }
+
+      #controls {
+        text-align: center;
+      }
+
+      #controls button {
+        font-size: 2em;
+        font-weight: bold;
+        padding: 10px 20px;
+        margin: 2px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+      }
+
+      #startBtn {
+        background-color: hsl(101, 82%, 49%);
+      }
+      #startBtn:hover {
+        background-color: hsl(101, 82%, 39%);
+      }
+      #stopBtn {
+        background-color: hsl(0, 90%, 54%);
+      }
+      #stopBtn:hover {
+        background-color: hsl(0, 97%, 40%);
+      }
+
+      #resetBtn {
+        background-color: hsl(189, 74%, 47%);
+      }
+      #resetBtn:hover {
+        background-color: hsl(180, 95%, 29%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="myH1">StopWatch</h1>
+
+    <div id="container">
+      <div id="display">00:00:00:00</div>
+      <div id="controls">
+        <button id="startBtn" onclick="start()">Start</button>
+        <button id="stopBtn" onclick="stop()">Stop</button>
+        <button id="resetBtn" onclick="reset()">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      // console.log(Date.now());
+      //It returns the number of milliseconds since January 1, 1970 (UTC).
+
+      const display = document.getElementById("display");
+      let timer = null; // null means no value
+      let startTime = 0;
+      let elapsedTime = 0; // How many ms has over from start
+      let isRunning = false;
+
+      // elapsedTime = "Time already completed."
+      // Date.now() = "Current real time."
+      // startTime = Date.now() - elapsedTime = "Move the starting point back by the amount already completed so the
+      //                                         stopwatch continues instead of restarting."
+      function start() {
+        if (!isRunning) {
+          startTime = Date.now() - elapsedTime;
+          isRunning = true;
+          timer = setInterval(update, 10); // call update function for every 10ms
+        }
+      }
+      function stop() {
+        if (isRunning) {
+          clearInterval(timer);
+          elapsedTime = Date.now() - startTime; //To store How much time completed till now
+          isRunning = false;
+        }
+      }
+
+      function reset() {
+        clearInterval(timer);
+        startTime = 0;
+        elapsedTime = 0;
+        isRunning = false;
+        display.textContent = "00:00:00:00";
+      }
+
+      function update() {
+        const currentTime = Date.now();
+        elapsedTime = currentTime - startTime;
+
+        let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+        let minutes = Math.floor((elapsedTime / (1000 * 60)) % 60);
+        let seconds = Math.floor((elapsedTime / 1000) % 60);
+        let milliseconds = Math.floor((elapsedTime % 1000) / 10);
+
+        hours = String(hours).padStart(2, "0");
+        minutes = String(minutes).padStart(2, "0");
+        seconds = String(seconds).padStart(2, "0");
+        milliseconds = String(milliseconds).padStart(2, "0");
+
+        display.textContent =
+          hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
+      }
+    </script>
+  </body>
+</html>

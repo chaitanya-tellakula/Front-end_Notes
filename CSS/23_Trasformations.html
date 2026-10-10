@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #box1 {
+        height: 250px;
+        width: 250px;
+        border: 5px solid;
+        font-size: 13em;
+        text-align: center;
+        background-color: #6eea72;
+        transform: translateX(100px);
+        transform: rotateX(135deg);
+        transform: scale(2, 0.5);
+      }
+
+      #box2 {
+        height: 250px;
+        width: 250px;
+        border: 5px solid;
+        font-size: 13em;
+        text-align: center;
+        background-color: red;
+        transform: translateX(100px) rotateZ(90deg) scale(0.5);
+      }
+      img {
+        transform: translateX(100px) rotateZ(90deg) scale(2);
+      }
+    </style>
+  </head>
+  <body>
+    <!--     
+        transformations = CSS Property lets you 
+                            rotate,scale,skew,translate an element 
+                   transform: translateX(100px) rotateZ(90deg) scale(0.5); -> we can give all values at a time also 
+
+                   
+            trasulate : can be x=move on x-axis ,y=move on y axis  px or %
+                        1)transform: translateX(100px); -> makes elemnt move to right 100px
+                        2)transform: translateX(-100%)->; makes element move to left 100% of its size
+                        3)transform: translate(100px, 100px);  can give both values at a time
+
+
+
+            rotate : can be x,y,z
+                    1) transform: rotateX(135deg); 45deg,90deg,180 etc.
+
+
+            scale : can be on x-axis and y-axis  1.1 means -> 110 percent 0.25-> 25% size it become
+                        1) transform: scaleX(1.1);
+                        2) transform: scaleY(0.25);
+                        3) transform: scale(3,2.5); -> at a time you can give both values
+
+
+            skew : can be x y   in deg
+                        1) transform: skewX(180deg);
+                        2) transform: skewY(90deg);
+                        3) transform: skew(45deg,90deg); -> at a time can give values
+                            -->
+
+    <div id="box1">Hi</div>
+    <div id="box2">Hi</div>
+    <img src="images/image2.jpeg" alt="" height="100px" />
+  </body>
+</html>

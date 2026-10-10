@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      h1 {
+        background-color: #c5bfbf;
+        text-align: center;
+        padding: 25px;
+        margin: 0px;
+      }
+      .navbar {
+        background-color: #0b0b0b;
+        height: 50px;
+      }
+      aside {
+        width: 20%;
+        float: left;
+        padding: 10px;
+      }
+      section {
+        width: 40%;
+        float: left;
+        padding: 10px;
+      }
+      article {
+        width: 40%;
+        float: left;
+        padding: 10px;
+      }
+      footer {
+        clear: both;
+        padding: 25px;
+      }
+
+      @media screen and (max-width) {
+        aside,
+        article,
+        section {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--     
+        semantic tags= keeps your content organized
+                        Better for SEO
+                        Assists scrren readers and
+                        other tech for acessibility
+
+        
+                        header -> introductory content
+                        nav -> navigation bar ,links
+                        main -> main content(section,aside,article ,div)
+                        section ->dependent content
+                        aside -> side content
+                        article ->independent content
+                        footer -> closing content
+ -->
+
+    <header>
+      <h1>Header</h1>
+    </header>
+
+    <nav class="navbar"></nav>
+
+    <main>
+      <aside>
+        <h2>This is aside</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut id eum
+          debitis quas velit in quam! Corporis veritatis, cumque fuga earum
+          aperiam perspiciatis magni minus quasi sequi nihil omnis magnam.
+        </p>
+      </aside>
+
+      <section>
+        <h2>This is section</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex minima
+          inventore cumque possimus aliquam omnis accusamus voluptas expedita
+          vero quisquam saepe ipsa dolore delectus, sapiente quo, assumenda
+          repellat. Consequuntur, ipsum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+          aliquid earum animi reiciendis ducimus unde ab quia minima fugit culpa
+          corporis provident neque eveniet molestias, sit dignissimos incidunt!
+          Nam, a!
+        </p>
+      </section>
+      <article>
+        <h2>This is article</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum
+          accusamus quod minus, veritatis odit atque quibusdam et fugiat,
+          perspiciatis ex corporis hic, eligendi deleniti dolorum nostrum
+          voluptates eveniet rerum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam a atque
+          debitis, placeat amet dolore voluptatum repudiandae explicabo tenetur?
+          Qui modi officia voluptas voluptatibus sequi impedit corporis tempora
+          dolor accusamus.
+        </p>
+      </article>
+    </main>
+
+    <footer>
+      <h1>Footer</h1>
+    </footer>
+  </body>
+</html>

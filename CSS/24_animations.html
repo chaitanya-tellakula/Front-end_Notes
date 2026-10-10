@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 250px;
+        height: 250px;
+        background-color: red;
+        font-size: 13em;
+        text-align: center;
+        animation-name: colorChange;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-play-state: running;
+        animation-timing-function: ease-in-out;
+      }
+      img {
+        animation-name: slideDown;
+        animation-duration: 2s;
+      }
+      @keyframes slideLeft {
+        from {
+          transform: translateX(100%);
+        }
+      }
+      @keyframes slideRight {
+        to {
+          transform: translateX(300%);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(300%);
+        }
+      }
+      @keyframes slideDown {
+        to {
+          transform: translateY(300%);
+        }
+      }
+      @keyframes rotate {
+        20% {
+          transform: rotateZ(360deg);
+        }
+      }
+      @keyframes grow {
+        50% {
+          transform: scale(5, 5);
+        }
+      }
+      @keyframes shrink {
+        50% {
+          transform: scale(0.5, 0.5);
+        }
+      }
+      @keyframes fade {
+        50% {
+          opacity: 0;
+        }
+      }
+      @keyframes colorChange {
+        0% {
+          background-color: red;
+        }
+        20% {
+          background-color: orange;
+        }
+        40% {
+          background-color: yellow;
+        }
+        60% {
+          background-color: green;
+        }
+        80% {
+          background-color: blue;
+        }
+        100% {
+          background-color: purple;
+        }
+      }
+      @keyframes glow {
+        50% {
+          box-shadow: 2px 2px 50px yellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--     
+    these all can be set
+     animation: name duration timing-function delay iteration-count direction fill-mode;
+    
+     percentage-> used to perfrom that operation and undo that in remaing time
+
+   trasulate can do -> 1)From 2)To 3)percentage
+   
+   rotate animation -> 1)From 2)To 3)50% like percentage
+        20% means complete the animnation in given 20%time and 80%  undo operation in reaming time
+
+    
+     animation-iteration-count -> can be 0 ,1, 5, infinite
+     
+
+     animation-direction: 
+                1)normal -> work as same
+                2)reverse -> work as reverse
+                3)alternate -> works same and reverse both
+                4)alternate-reverse -> same as alternate but opposite
+    
+    
+     animation-play-state:
+                1)paused
+                2)running
+
+
+        animation-timing-function:
+                1)ease-in-out ->at start fast but ending will be slow
+                2)linear -> all contant same speed
+                3)steps -> steps(3) can be set how may steps to complete
+
+                You can make manual by inspecting element
+    -->
+
+    <div id="box">Hi</div>
+
+    <img src="images/image2.jpeg" alt="" height="200px" />
+  </body>
+</html>

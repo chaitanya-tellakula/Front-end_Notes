@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="age">Enter your age :</label>
+    <input type="text" name="" id="age" /><br /><br />
+    <button id="mysub">submit</button><br /><br />
+    <label for="result" id="result"></label>
+
+    <script>
+      //IF STATEMENTS = if a condition is true ,execute some code
+      //                   if not do something else
+
+      let age = 25;
+      if (age >= 18) {
+        console.log("You are old enough to enter this site");
+      } else {
+        console.log("You must me 18+ to enter this site");
+      }
+
+      let time = 9;
+      if (time < 12) {
+        console.log("Good Morning");
+      } else {
+        console.log("Good Afternoon");
+      }
+
+      let isStudent = true;
+      if (isStudent) {
+        console.log("You are student");
+      } else {
+        console.log("You are not a student");
+      }
+
+      let age1 = 16;
+      let hasLicense = false;
+
+      if (age >= 16) {
+        console.log("You are old enough to drive");
+
+        if (hasLicense) {
+          console.log("yOU HAVE YOUR LICENSE");
+        } else {
+          console.log("You dont have your license");
+        }
+      } else {
+        console.log("You must be 16+ to have a license");
+      }
+
+      const age2 = document.getElementById("age");
+      const mysub = document.getElementById("mysub");
+      const result = document.getElementById("result");
+
+      mysub.onclick = function () {
+        let age7 = age2.value;
+        age7 = Number(age7);
+
+        if (age7 >= 100) {
+          result.textContent = "You are Too old to enter this site";
+        } else if (age7 == 0) {
+          result.textContent = "You cant enter You just born";
+        } else if (age7 >= 18) {
+          result.textContent = "You are old enough to enter this site";
+        } else if (age7 < 0) {
+          result.textContent = "Your age cant be less than 0";
+        } else {
+          result.textContent = "You must be 18+ to enter this site";
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        height: 100px;
+        width: 100px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 5em;
+      }
+      #box1 {
+        background-color: red;
+        order: 4;
+      }
+      #box2 {
+        background-color: blue;
+        order: 3;
+      }
+      #box3 {
+        background-color: rgb(241, 42, 75);
+        order: 1;
+      }
+      #box4 {
+        background-color: yellow;
+        order: 2;
+      }
+
+      .container {
+        display: flex;
+        border: 10px solid black;
+        height: 90vh;
+        flex-wrap: wrap;
+        column-gap: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- flex direction : 1) row 2)column 3)row-reverse 4)column-reverse
+
+    justify content -> controls the content in x-axis(main axis)
+            1)space-between  ->starting no space
+            2)space-around
+            3)center
+            4)space evenly
+
+
+    align-items -> controls the content in the y-axis(alternate axis)
+            1)flex-start(default) -> at top
+            2)flex-end
+            3)center -> place on center of y-axis
+            4)baseline -> base line will be there all content will pass through that line
+
+
+    flex-warp : used with align content
+            1)wrap(default) -> content more comes to next line in middle space
+            2)wrap used with  align-content=flex-start -> space blw them gone
+                                            flex-end
+                                            center
+                                            space-evenly
+                                            space-between
+
+    column-gap :2em ->To add gaps
+    row gap :2em -> To add gaps
+
+    align-self  :  can be applied to individual element
+            start,center,end
+    
+    order -> we can use it to change the order of an element
+            applied induvidully to element
+
+     -->
+
+    <div class="container">
+      <div class="box" id="box1">1</div>
+      <div class="box" id="box2">2</div>
+      <div class="box" id="box3">3</div>
+      <div class="box" id="box4">4</div>
+    </div>
+  </body>
+</html>

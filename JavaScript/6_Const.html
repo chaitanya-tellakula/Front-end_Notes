@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="myH1">Enter the radius of a circle :</h1>
+    <label for="radius">radius : </label>
+    <input type="text" id="radius" /> <br /><br />
+    <button id="mySub">submit</button>
+
+    <script>
+      // const= A variable that cannot be changed
+      // Usually  the constant numeric type used with captial letters
+
+      const PI = 3.14159; // some one accedentaly may change this value
+      let radius;
+      let circumference;
+
+      radius = window.prompt("Enter the radius of a circle");
+      radius = Number(radius);
+      circumference = 2 * PI * radius;
+
+      console.log(circumference);
+
+      //Method 2
+
+      document.getElementById("mySub").onclick = function () {
+        let radius1 = document.getElementById("radius").value;
+        radius1 = Number(radius1);
+        let circumference1 = 2 * PI * radius1;
+        document.getElementById("myH1").textContent =
+          "Circumfernce : " + circumference1;
+      };
+    </script>
+  </body>
+</html>

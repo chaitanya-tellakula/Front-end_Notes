@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="student-data"></div>
+
+    <script>
+      fetch("./3_Data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          data.forEach((student) => {
+            const p = document.createElement("p");
+
+            p.textContent = student.name + " - " + student.rollno;
+
+            document.getElementById("student-data").appendChild(p);
+          });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      #mysub {
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" name="" id="mycheck" />
+    <label for="checbox">subscribe</label><br /><br />
+
+    <input type="radio" id="visabtn" name="card" />
+    <label for="visabtn">Visa</label><br />
+
+    <input type="radio" id="mastercardbtn" name="card" />
+    <label for="mastercardbtn">MasterCard</label><br />
+
+    <input type="radio" id="paypalbtn" name="card" />
+    <label for="paypalbtn">PayPal</label><br /><br />
+
+    <button type="submit" id="mysub">Submit</button>
+
+    <p id="subresult"></p>
+    <p id="paymentresult"></p>
+
+    <script>
+      // checked property = property that determines the checked
+      //                       state of an HTML Checkbox or radio button
+
+      const checbox = document.getElementById("mycheck");
+      const visabtn = document.getElementById("visabtn");
+      const mastercardbtn = document.getElementById("mastercardbtn");
+      const paypalbtn = document.getElementById("paypalbtn");
+      const mysub = document.getElementById("mysub");
+      const subresult = document.getElementById("subresult");
+      const paymentresult = document.getElementById("paymentresult");
+
+      mysub.onclick = function () {
+        if (checbox.checked) {
+          subresult.textContent = "You are subscribed";
+        } else {
+          subresult.textContent = "You are not subscribed";
+        }
+
+        if (visabtn.checked) {
+          paymentresult.textContent = "You are paying with visa";
+        } else if (mastercardbtn.checked) {
+          paymentresult.textContent = "You are paying with MasterCard";
+        } else if (paypalbtn.checked) {
+          paymentresult.textContent = "You are paying with Paypal";
+        } else {
+          paymentresult.textContent = "You must select one payment method";
+        }
+      };
+    </script>
+  </body>
+</html>

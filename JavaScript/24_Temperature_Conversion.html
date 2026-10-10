@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #c5c2c2;
+      }
+
+      h1 {
+        color: rgb(70, 234, 234);
+      }
+
+      form {
+        background: white;
+        text-align: center;
+        max-width: 350px;
+        margin: auto;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgb(9, 9, 9);
+      }
+
+      #textBox {
+        width: 50%;
+        text-align: center;
+        font-size: 2em;
+        border: 2px solid hsl(0, 0%, 0%);
+        border-radius: 10px;
+      }
+
+      label {
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+
+      button {
+        background-color: #df3b3b;
+        font-size: 1.5em;
+        padding: 10px 15x;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #f60e0e;
+      }
+
+      #result {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>Temperature Coversion :</h1>
+      <input type="number" name="" id="textBox" value="0" /> <br />
+      <br />
+
+      <input type="radio" id="toFarenheit" name="unit" />
+      <label for="toFarenheit">Celsius -> Farenheit</label> <br />
+      <input type="radio" id="toCelsius" name="unit" />
+      <label for="toCelsius">Farenheit -> Celsius</label> <br />
+      <br />
+
+      <button type="button" id="submit">Submit</button>
+      <p id="result">Select a Unit</p>
+    </form>
+
+    <script>
+      // temp.toFixed(1) -> Covert result into 1 precision
+
+      const textBox = document.getElementById("textBox");
+      const toFarenheit = document.getElementById("toFarenheit");
+      const toCelsius = document.getElementById("toCelsius");
+      const result = document.getElementById("result");
+      // const submit = (document.getElementById("submit").onclick = convert());
+      let temp;
+
+      document.getElementById("submit").onclick = function convert() {
+        if (toFarenheit.checked) {
+          temp = Number(textBox.value);
+          temp = (temp * 9) / 5 + 32;
+          result.textContent = temp.toFixed(1) + " F";
+        } else if (toCelsius.checked) {
+          temp = Number(textBox.value);
+          temp = (temp - 32) * (5 / 9);
+          result.textContent = temp.toFixed(1) + " C";
+        } else {
+          result.textContent = "Select a Unit";
+        }
+      };
+    </script>
+  </body>
+</html>

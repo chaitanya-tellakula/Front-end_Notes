@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a:link {
+        color: rgb(225, 143, 85);
+        /* unvisited */
+      }
+      a:visited {
+        color: green;
+      }
+
+      a:hover {
+        color: brown;
+        font-size: 1.1em;
+      }
+
+      a:active {
+        color: aqua;
+        font-size: 1.1em;
+        /* when we press the link colour changes to this */
+      }
+
+      li:hover {
+        background-color: #75aae7;
+      }
+
+      li:not(:hover) {
+        background-color: #bebbbb;
+      }
+
+      li:nth-child(1) {
+      }
+      li:nth-child(9n + 3) {
+      }
+      li:nth-child(even) {
+      }
+
+      #container p {
+        background-color: #62decd;
+        display: none;
+      }
+      #container:hover p {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://google.com" target="_blank">Google</a>
+
+    <ul>
+      <li>This is #1</li>
+      <li>This is #2</li>
+      <li>This is #3</li>
+      <li>This is #4</li>
+      <li>This is #5</li>
+      <li>This is #6</li>
+      <li>This is #7</li>
+      <li>This is #8</li>
+      <li>This is #9</li>
+    </ul>
+
+    <ul>
+      <li>This is #1</li>
+      <li>This is #2</li>
+      <li>This is #3</li>
+      <li>This is #4</li>
+      <li>This is #5</li>
+      <li>This is #6</li>
+      <li>This is #7</li>
+      <li>This is #8</li>
+      <li>This is #9</li>
+    </ul>
+
+    <div id="container">
+      Hover here
+      <p>Suprise</p>
+    </div>
+  </body>
+</html>

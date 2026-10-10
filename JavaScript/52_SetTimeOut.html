@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="setTimer()">START</button>
+    <button onclick="clearTimer()">CLEAR</button>
+    <p id="result"></p>
+
+    <script>
+      // setTimeout() = function in Javascript that alloes you to
+      //                 schedule the exexution of a function
+      //                  after an amount of time( milli seconds)
+      //                  Times are approximate(varies based on the workload)
+      //                  of the Javascript runtime env .)
+      //
+      //
+      //
+      //      setTimeout(callback,delay)
+      //      clearTimeout(timeoutId) = can cancel a timout before it triggers
+      //      setInterval(updateClock, 1000); => calls the update calls function after every sec
+
+      function sayHello1() {
+        console.log("Hello");
+      }
+
+      setTimeout(sayHello1, 3000);
+
+      setTimeout(function () {
+        console.log("Bye");
+      }, 2000);
+
+      setTimeout(() => {
+        console.log("Bruce");
+      }, 3000);
+
+      //--------------------- Example 2---------------------
+
+      // 0 sec   ---> Timer created (5 sec)
+      // 2 sec   ---> clearTimeout(timer) runs
+      // 5 sec   ---> "Hello" does NOT execute
+
+      //Output:    Timer cancelled
+      const timer = setTimeout(() => {
+        // Stores timer stores its ID.
+        console.log("Hello");
+      }, 5000);
+
+      setTimeout(() => {
+        clearTimeout(timer);
+        console.log("Timer cancelled");
+      }, 2000);
+
+      //--------------------- Example 3---------------------
+      let timeoutId1;
+      function setTimer() {
+        timeoutId1 = setTimeout(() => {
+          window.alert("Hell0");
+        }, 3000);
+        document.getElementById("result").textContent = "STARTED";
+      }
+
+      function clearTimer() {
+        clearTimeout(timeoutId1);
+        document.getElementById("result").textContent = "CLEARED";
+      }
+    </script>
+  </body>
+</html>

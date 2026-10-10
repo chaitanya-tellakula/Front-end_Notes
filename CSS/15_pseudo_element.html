@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1::first-letter {
+        font-size: 2em;
+        font-style: italic;
+      }
+
+      p::first-line {
+        background-color: #d9f058;
+      }
+      p::selection {
+        background-color: #7cdaf0;
+      }
+
+      #fruit li::before {
+        content:;
+      }
+
+      #apple::after {
+        content: 🍎;
+      }
+      #banana::after {
+        content: 🍌;
+      }
+      #citrus::after {
+        content: 🍋‍🟩;
+      }
+      #fruit li::marker {
+        content: "✔️";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- psuedo element= keyword added after a selector 
+                        used to style a  specific
+                        parts of an element
+
+                        h1::first-letter
+                        p::first-line
+                        p:: selection -> when you select some text
+                        li::before  content
+                        li::after   content
+                        li::marker  content -> you can change that bullet in li using content
+                        
+                        -->
+
+    <h1>Bro code</h1>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa
+      unde, est quas ad quod dolore minima odio illum maxime, nisi, consequatur
+      architecto velit sed in perferendis. Excepturi, recusandae asperiores.
+    </p>
+
+    <ul id="fruit">
+      <li id="apple">Apple</li>
+      <li id="banana">Banana</li>
+      <li id="citrus">Citrus</li>
+    </ul>
+  </body>
+</html>

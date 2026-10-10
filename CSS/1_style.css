@@ -1,0 +1,10 @@
+#external {
+  color: rgb(222, 90, 54);
+}
+
+.even {
+  color: gold;
+}
+.odd {
+  color: blue;
+}

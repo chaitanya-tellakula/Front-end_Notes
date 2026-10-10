@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students</title>
+  </head>
+
+  <body>
+    <label>Name : </label>
+    <input type="text" id="name" /><br /><br />
+
+    <label>Roll No : </label>
+    <input type="text" id="rollno" /><br /><br />
+
+    <label>UG : </label>
+    <input type="number" id="ug" /><br /><br />
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <div id="student-data"></div>
+
+    <script>
+      let students = JSON.parse(localStorage.getItem("students")) || [];
+
+      function addStudent() {
+        const name = document.getElementById("name").value;
+        const rollno = document.getElementById("rollno").value;
+        const ug = document.getElementById("ug").value;
+
+        const student = {
+          name: name,
+          rollno: rollno,
+          ug: ug,
+        };
+
+        // Add student to array
+        students.push(student);
+
+        // Store array in localStorage
+        localStorage.setItem("students", JSON.stringify(students));
+
+        // Display students
+        displayStudents();
+
+        // Clear input fields
+        document.getElementById("name").value = "";
+        document.getElementById("rollno").value = "";
+        document.getElementById("ug").value = "";
+      }
+
+      function displayStudents() {
+        const div = document.getElementById("student-data");
+
+        div.innerHTML = "";
+
+        students.forEach(function (student) {
+          const p = document.createElement("p");
+
+          p.textContent =
+            "Name: " +
+            student.name +
+            " | Roll No: " +
+            student.rollno +
+            " | UG: " +
+            student.ug;
+
+          div.appendChild(p);
+        });
+      }
+
+      // Display previously stored students when page loads
+      displayStudents();
+    </script>
+  </body>
+</html>
+
+<!-- Local Storage :
+
+localStorage is a browser storage mechanism.
+It is used to store data on the user's browser.
+
+Data is stored in key-value pairs.
+
+Data remains available even after refreshing or closing the browser.
+    "It stores data as strings."
+
+setItem() is used to store data.
+getItem() is used to retrieve data.
+removeItem() is used to remove a particular item.
+clear() is used to remove all local storage data.
+To store JavaScript objects/arrays, use JSON.stringify().
+To convert stored JSON data back into an object/array, use JSON.parse().
+It is useful for small client-side data.
+It is not a proper database like MySQL or MongoDB.
+Data in localStorage belongs to the specific browser and website (origin).
+
+Important syntax
+localStorage.setItem("key", "value");
+
+localStorage.getItem("key");
+
+localStorage.removeItem("key");
+
+localStorage.clear();
+Object storage
+localStorage.setItem("student", JSON.stringify(student));
+Object retrieval
+const student = JSON.parse(localStorage.getItem("student")); -->
+
+<!-- 
+localStorage
+
+localStorage.setItem("name", "Chaitanya");
+
+name → Chaitanya 
+-->

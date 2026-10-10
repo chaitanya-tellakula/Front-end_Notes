@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .box {
+        border: 2px solid black;
+        padding: 25px;
+        box-sizing: border-box;
+        height: auto;
+        width: 50%;
+        min-height: 50%;
+        float: left;
+      }
+
+      .container {
+        background-color: #d6f042;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <!--     
+        100vh -> view port height
+
+    originally : height=auto height calcualted automatically
+                         when run webpage.
+               
+                     width=auto By default
+    
+    width :50% -> means only element takes
+    half of your scrren size means if you add border,padding the
+    size=element+padding+border so two halfs cannot fit so use box sizing=
+    border box
+    
+    Border box= it considers the size
+                 means total including 
+                  element+padding+border 
+                 means exactly it will be in our given height and width
+
+    minheight= takes the min this much height in avaable space
+                above container=100% scrren size so now inside 
+                boxes takes  50% of screen
+
+    maxheight also
+    
+    -->
+    <div class="container">
+      <div class="box">
+        <h1>This is Box1</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, minus
+          dolores. Ea reiciendis ducimus adipisci quasi, aliquid iusto
+          distinctio odio eveniet! Quam optio quo iste, aliquam facilis in sed
+          nihil?
+        </p>
+      </div>
+      <div class="box">
+        <h1>This is Box2</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, minus
+          dolores. Ea reiciendis ducimus adipisci quasi, aliquid iusto
+          distinctio odio eveniet! Quam optio quo iste, aliquam facilis in sed
+          nihil?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

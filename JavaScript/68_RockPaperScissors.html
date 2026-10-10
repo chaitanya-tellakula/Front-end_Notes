@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      h1 {
+        font-size: 3.5em;
+      }
+
+      #choices {
+        margin-bottom: 20px;
+      }
+
+      #choices button {
+        font-size: 5em;
+        margin-left: 25px;
+        cursor: pointer;
+        border-radius: 250px;
+        background-color: #1f9aa5;
+        border-style: none;
+      }
+
+      #playerDisplay,
+      #computerDisplay {
+        font-size: 1.5em;
+      }
+
+      #resultDisplay {
+        font-size: 3.5em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .greenText,
+      #playerScoreDisplay {
+        color: rgb(4, 187, 4);
+      }
+      .redText,
+      #computerScoreDisplay {
+        color: red;
+      }
+
+      .scoreDisplay {
+        font-size: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rock -Paper - Scissor</h1>
+
+    <div id="choices">
+      <button onclick="playGame('rock')">👊</button>
+      <button onclick="playGame('paper')">✋</button>
+      <button onclick="playGame('scissors')">✌️</button>
+    </div>
+
+    <div id="playerDisplay">PLAYER :</div>
+    <div id="computerDisplay">COMPUTER :</div>
+    <div id="resultDisplay">IT'S A TIE!</div>
+
+    <div class="scoreDisplay">
+      Player Score :
+      <span id="playerScoreDisplay">0</span>
+    </div>
+
+    <div class="scoreDisplay">
+      Computer Score :
+      <span id="computerScoreDisplay">0</span>
+    </div>
+
+    <script src="68_RockPaperScissor.js"></script>
+  </body>
+</html>

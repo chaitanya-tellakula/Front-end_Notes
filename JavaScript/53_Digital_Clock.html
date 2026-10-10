@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #clock-container {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-image: url("https://wallpaperaccess.com/full/30219.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      #clock {
+        font-family: monospace;
+        font-size: 3.5em;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        backdrop-filter: blur(5px);
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock-container">
+      <div id="clock">00:00:00</div>
+    </div>
+
+    <script>
+      // || is the logical OR operator
+
+      // 5 || 10      // 5
+      // 0 || 10      // 10
+      // "" || "Hi"   // "Hi"
+      // null || 7    // 7
+      function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        const meridian = hours >= 12 ? "PM" : "AM";
+        hours = (hours % 12 || 12).toString().padStart(2, "0");
+        const minutes = now.getMinutes().toString().padStart(2, "0");
+        const seconds = now.getSeconds().toString().padStart(2, "0");
+
+        const timeString =
+          hours + ":" + minutes + ":" + seconds + " " + meridian;
+        document.getElementById("clock").textContent = timeString;
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+</html>

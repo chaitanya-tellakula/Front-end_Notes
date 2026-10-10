@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      label {
+        display: block;
+        text-align: center;
+        font-family: Verdana;
+        font-size: 10em;
+      }
+
+      #container {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 1.5em;
+        color: white;
+        background-color: #5be4f0;
+        margin-left: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #4692ea;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="countlabel" id="countlabel">0</label>
+
+    <div id="container">
+      <button id="decrease">decrease</button>
+      <button id="reset">reset</button>
+      <button id="increase">increase</button>
+    </div>
+    <script>
+      const decreaseBtn = document.getElementById("decrease");
+      const resetBtn = document.getElementById("reset");
+      const increaseBtn = document.getElementById("increase");
+      const countlabel = document.getElementById("countlabel");
+
+      let count = 0;
+
+      increaseBtn.onclick = function () {
+        count++;
+        countlabel.textContent = count;
+      };
+
+      decreaseBtn.onclick = function () {
+        count--;
+        countlabel.textContent = count;
+      };
+
+      resetBtn.onclick = function () {
+        count = 0;
+        countlabel.textContent = 0;
+      };
+    </script>
+  </body>
+</html>

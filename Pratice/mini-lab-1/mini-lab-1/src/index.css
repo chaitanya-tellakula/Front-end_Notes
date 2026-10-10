@@ -1,0 +1,10 @@
+.main-container{
+  display:flex;
+  gap:30px;
+}
+.container{
+  background-color: rgb(115, 115, 192);
+  width:500px;
+  height:250px;
+  border-radius: 10px;
+}

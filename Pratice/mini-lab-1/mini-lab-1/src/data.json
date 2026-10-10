@@ -1,0 +1,24 @@
+[
+    {
+        "id":1,
+        "name":"Biryani",
+        "category":"MainCourse",
+        "price":500,
+        "available":true
+    },
+    {
+        "id":2,
+        "name":"ChickenTikka",
+        "category":"Starter",
+        "price":300,
+        "available":true
+    },
+    {
+        "id":3,
+        "name":"ChocolateMoose",
+        "category":"Dessert",
+        "price":250,
+        "available":false
+    }
+
+]

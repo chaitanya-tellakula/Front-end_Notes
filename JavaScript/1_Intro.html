@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>First JavaScript Page</h1>
+    <h2>Differnce blw the textContent and InnerHTML explained in comments</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta
+      corporis amet sunt neque ipsa molestias pariatur commodi dignissimos fuga,
+      sequi consequatur magnam deserunt temporibus aspernatur maiores labore non
+      blanditiis!
+    </p>
+
+    <h1 id="myH"></h1>
+    <p id="myP"></p>
+    <p id="p1"></p>
+
+    <script src="2_variable.js">
+      // .textContent -> Used to display text as it is  document.getElementById("myH").textContent = "<b>Hello</b>";
+      // Displays:  <b>Hello</b>
+
+      // document.getElementById("myH").innerHTML = "<b>Hello</b>";
+      // Displays:    Hello
+
+      //   console.log("Hello Java Script");
+      //   window.alert("This is an alert");
+
+      // This is single line comment
+
+      /* This
+            is
+            multi line comment */
+
+      document.getElementById("myH").textContent = "Chaitanya";
+      document.getElementById("myP").textContent = "Plz Continue this course";
+    </script>
+  </body>
+</html>

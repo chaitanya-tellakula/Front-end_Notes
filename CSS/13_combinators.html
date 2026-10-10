@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        border: 3px solid black;
+      }
+      #container > p {
+        background-color: #e4ed36;
+      }
+
+      #container ~ p {
+        background-color: #e13ab2;
+        /* all sibling of container which is paragrapgh  */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    combinators = explains the relationship
+                    between listed selectors
+
+                    space  ->decendent =from anywhere inside  child,grandchild etc..
+                    >   ->child  = only child will be effected
+                    ~  ->general sibling  = anywhere this combination appears "only after" the elemnt
+                    +  ->adjacent sibling = only the immediately following next sibling. No before is effected
+-->
+    <p>This is outside div</p>
+
+    <div id="container">
+      <p>This is child of div</p>
+      <p>This is child of div</p>
+      <div>
+        <p>This is child of inner div</p>
+      </div>
+    </div>
+
+    <p>This is outside div</p>
+    <p>This is outside div</p>
+  </body>
+</html>

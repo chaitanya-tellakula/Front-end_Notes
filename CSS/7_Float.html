@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #img1 {
+        float: left;
+        margin-right: 4px;
+      }
+
+      #img2 {
+        float: right;
+        margin-right: 4px;
+        margin-left: 5px;
+      }
+      body {
+        border: 5px solid black;
+        display: flow-root;
+        /* flow-root is useful if the image is become overflow of parent  flowroot  makes it no overflow
+         so when use float for its parent use the diaply flow root
+         Normally when you float an elemnt parent thinks it ha no child
+         when you do flow-root it counts its children even it floats */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- float= allows other element to float arund it -->
+    <!-- float-left means image stay at left and text come on right side 
+     float-right means image stay at the right text come at the left side -->
+    <img
+      src="images/Tellakula Chaitanya Naga Sai Pavan_page-0001 (1).jpg"
+      alt=""
+      height="100px"
+      id="img1"
+    />
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolores
+      harum, voluptatum consectetur vel nemo aliquid dolor libero soluta
+      suscipit itaque perferendis doloribus optio sit, ipsam eligendi recusandae
+      eius veritatis.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus
+      nesciunt deleniti minus aliquid, odit reprehenderit minima, saepe, illum
+      dolorem eius architecto explicabo optio id facilis autem nam delectus
+      earum nulla.
+    </p>
+
+    <img
+      src="images/Tellakula Chaitanya Naga Sai Pavan_page-0001 (1).jpg"
+      alt=""
+      height="100px"
+      id="img2"
+    />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus in nisi,
+      dignissimos et provident fugit deleniti eveniet illo necessitatibus
+      molestias iste nihil facere rerum exercitationem saepe facilis ad
+      asperiores tenetur?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum qui
+      vitae ad laborum veniam totam consectetur, sunt placeat laudantium ullam.
+      Distinctio, voluptatum. Autem sapiente perspiciatis vero, molestiae
+      debitis sed atque!
+    </p>
+  </body>
+</html>

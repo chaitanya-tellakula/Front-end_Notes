@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Method Chaining = Calling one method  after another
+      //                    in one continous line of code
+
+      //----------NO METHOD CHAINING --------------------
+
+      let username = window.prompt("Enter Your username :");
+      let username1 = username;
+
+      username = username.trim();
+      let letter = username.charAt(0);
+      letter = letter.toUpperCase();
+
+      let extraChars = username.slice(1);
+      extraChars = extraChars.toLowerCase();
+      username = letter + extraChars;
+
+      console.log(username);
+
+      // ---------- Method Chaining-------------------
+
+      username1 =
+        username1.trim().charAt(0).toUpperCase() +
+        username1.trim().slice(1).toLowerCase();
+      console.log(username1);
+    </script>
+  </body>
+</html>

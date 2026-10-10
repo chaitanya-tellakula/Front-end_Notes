@@ -1,0 +1,27 @@
+Simple rule :
+
+If parent contains floated children, you have two choices:
+
+1)Make the parent contain the floats (best)
+
+.parent {
+    display: flow-root;  or  overflow :hidden
+}
+
+2)Tell the next element to stay below the floats
+
+.next {
+    clear: both;
+}
+
+
++------------------------+
+| Parent                 |
+| +--------------------+ |
+| | Child              | |  if floated c
+| +--------------------+ |
++------------------------+
+
++------------------------+
+| NEXT                   |
++------------------------+
